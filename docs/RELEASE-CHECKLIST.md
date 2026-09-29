@@ -23,7 +23,7 @@
 - [ ] Inspect every staged file for credentials, emails, user/container/device identifiers, personal prefixes and proprietary assets.
 - [x] Owner authorized public repository; reviewed source-only contents pushed without private data or binaries.
 - [x] Replace the Reddit draft placeholder with the actual repository URL (do not post until a usable release exists).
-- [ ] Validate final public-folder candidate on device after reconnecting it; earlier test-folder acceptance does not replace this check.
+- [x] Validate final public-folder candidate: installation, gameplay, direct entry, restart and gamepad persistence confirmed on the owner's device.
 
 Do not distribute: Blizzard executables/data, game-derived shader captures, the owner's Wine prefix, account/character configuration, registry exports, raw diagnostic logs, or development-tool bundles.
 

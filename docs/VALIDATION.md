@@ -23,6 +23,8 @@ this is **not a read-only mount**. The installer does not run Battle.net.
 | Windows launcher | Owner opened the new test EXE from the container desktop and confirmed game launch. |
 | Direct GameHub entry | Owner selected the test EXE as Startup File Path and confirmed direct launch from GameHub. |
 | Full device restart | Owner restarted the console and confirmed direct GameHub launch still worked. |
+| Final package installation | The Download/Thor-Forever candidate prepared release-v1 with installer exit 0. |
+| Final launcher and restart | Owner confirmed Thor-Forever.exe works directly from GameHub after restarting, with gamepad settings preserved. |
 
 The original gameplay installation was not overwritten. Direct-entry testing
 does change the selected container's startup path; that selection can be

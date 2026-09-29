@@ -57,6 +57,7 @@ selection is not implemented. Game updates may require a new matching copy of
 the executable-side files; the launcher stops when the main executable differs.
 Do not solve this by deleting saved settings or rerunning the installer.
 
-The private test package passed on one device. The final folder names and public
-launcher still require release-candidate acceptance. This is experimental, not
-a promise of future game compatibility or a guaranteed frame rate.
+The final-folder candidate passed installation, gameplay, direct launch, reboot
+and gamepad-settings persistence on one device. Third-party packaging review
+is still required before a binary release. This is experimental, not a promise
+of future game compatibility or a guaranteed frame rate.

@@ -180,3 +180,11 @@ overwrite private install-v1/install-v2 attempts. Its device acceptance remains
 pending because the AYN Thor is currently disconnected from ADB. Two host
 directory-symlink tests remain explicitly skipped on Windows, not counted as
 passed. The owner-confirmed earlier Android layout test remains recorded above.
+
+Final-folder acceptance completed: setup-report recorded installer exit 0 under
+Download/Thor-Forever using release-v1. The owner confirmed excellent gameplay,
+then direct GameHub launch after restart and persisted gamepad controls. The
+initial absence of a report was traced to the user not yet pressing the first
+CMD confirmation key; installation ran successfully after that prompt. No
+runtime change was needed. Functional acceptance of this candidate is complete
+on this device; third-party source/notice packaging remains separate.

@@ -87,6 +87,10 @@ Preserved source archives now downloaded and hashed locally:
 | Wine fork | `52796bf615c265c23b22ae9dacc3da9e38c8487f` | `1e4af10a578c8a7d1075f9cdbf68d02adc5302fd956b42e452d6eb44503f0531` |
 | Banners-Turnip build recipes | `0121416358dce37615bb3ff97e67980ce7baf353` | `6fa5d717bd93423867b696cff3ceb78ac1c9521c5b03daa092a1772c43700196` |
 | Wine directaudio submodule | `2101085596ffe4911f7686012a97585eacbde9d0` | `f16bee1ba4864cad3ebcc704d02b31cefeecbd21fbd7e713bb3fa08f354c3408` |
+| DXVK | `0cf05780abd7250c2cd713b7749cf32180157cf5` | `64b1c768dbff87cf7bbea6803502826491293be7a533d3079b8da69e1e7f0aa0` |
+| DirectX headers | `9df86f2341616ef1888ae59919feaa6d4fad693d` | `9c1b8bbfd2d6c758fac4d93c2808a46bc1eee429fe656b4f21b29e02615aa8aa` |
+| SPIR-V headers | `8b246ff75c6615ba4532fe4fde20f1be090c3764` | `cfeed5f9a97d12a9761a26e7f5bd10fedb1a8ce92033075151ae3bc7206fc229` |
+| Vulkan headers | `46dc0f6e514f5730784bb2cac2a7c731636839e8` | `322c947754bae5e3cdca3b21aba20f420569f14e4784b20cdbc7565e2b593734` |
 
 Wine's directaudio submodule is pinned to
 `2101085596ffe4911f7686012a97585eacbde9d0` in

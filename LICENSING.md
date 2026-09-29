@@ -10,10 +10,11 @@ must be distributed in accordance with that upstream component's applicable
 license and notices. In particular, do not interpret the root MIT license as
 relicensing the Mesa source context included in `patches/`.
 
-No game files, personal prefixes or third-party binary release are included in
-this source/documentation draft. Before distributing third-party binaries,
-complete the dependency-specific source, license and notice checklist in
-`docs/RELEASE-CHECKLIST.md`. A checksum alone does not fulfill those requirements.
+No game files or personal prefixes are included. The Git tree contains source
+and notices; the experimental release separately provides a runtime kit and
+source companion. See `docs/SOURCE-DISTRIBUTION.md` for source archives, patches,
+build information and license scope. A checksum alone does not fulfill source
+or notice obligations. Preserve applicable notices when redistributing.
 
 The scoped no-OpenGL shim in `src/` is original utility code, not a copy of
 Mesa's OpenGL implementation. Its inclusion does not grant rights to distribute

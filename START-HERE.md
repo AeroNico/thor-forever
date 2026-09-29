@@ -1,8 +1,9 @@
 # Thor Forever: start here
 
-**Release candidate instructions. Do not treat a source-only download as an
-installer.** A complete binary package must include `Thor-Forever.exe`, the
-`payload` folder, license notices and the matching source-distribution materials.
+**Experimental v0.1.0-alpha.1 — tested on one AYN Thor.** Download
+`Thor-Forever-v0.1.0-alpha.1.zip` from the GitHub release, not **Code > Download
+ZIP**. The source companion is a separate developer download, not required for
+playing. The installer ZIP includes `Thor-Forever.exe`, `payload` and notices.
 
 ## Before you start
 
@@ -20,7 +21,9 @@ installer.** A complete binary package must include `Thor-Forever.exe`, the
 1. Extract the complete package so that `Install-Thor-Forever.cmd` is directly
    inside **Download/Thor-Forever**. Do not leave it inside a second nested folder.
 2. In GameHub, enter the desktop of the container where you installed the game.
-3. Open **Download > Thor-Forever > Install-Thor-Forever.cmd** and follow its prompt.
+3. Open **Download > Thor-Forever > Install-Thor-Forever.cmd**. When it says
+   **Press any key to continue**, press a key: waiting without pressing it does
+   not start installation. Run this installer only once.
 4. Leave the container open. After a few minutes, open
    **Thor-Forever > setup-report > result.txt**.
 5. Continue only when the report says `INSTALLER_EXIT=0` and
@@ -58,6 +61,7 @@ the executable-side files; the launcher stops when the main executable differs.
 Do not solve this by deleting saved settings or rerunning the installer.
 
 The final-folder candidate passed installation, gameplay, direct launch, reboot
-and gamepad-settings persistence on one device. Third-party packaging review
-is still required before a binary release. This is experimental, not a promise
+and gamepad-settings persistence on one device. The distributed Wine tar removes
+only unused prefix-import metadata; all retained members were verified unchanged.
+This is experimental, not a promise
 of future game compatibility or a guaranteed frame rate.

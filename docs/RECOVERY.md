@@ -27,6 +27,6 @@ referenced by a launcher. Do not run a recursive cleanup that follows links.
 Saved preferences and account-related settings in the new prefix/game directory
 must be preserved if you want to keep using that installation.
 
-The test launchers and their scripts remain dependencies even after direct
-GameHub launch works. Moving or deleting the test folder now would break that
-entry. A final package migration must be tested before retiring those files.
+The selected launcher's scripts remain dependencies even after direct GameHub
+launch works. Keep `Download/Thor-Forever` in place. Older test folders may still
+be needed by older startup entries; this release does not remove any of them.

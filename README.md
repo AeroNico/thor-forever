@@ -1,12 +1,16 @@
 # Thor Forever
 
-**Status: documentation/source draft, not a ready-to-install release.**
+**Status: experimental preview — tested on one AYN Thor.**
 
-The setup assistant is being developed for nontechnical users. A private package
-has now installed a separate runtime, prefix and game layout on the owner's
-AYN Thor. Gameplay, saved gamepad settings and direct GameHub launch passed
-manual testing. The public source draft does not yet include a complete,
-redistributable end-user package. See [validation results](docs/VALIDATION.md).
+Download **Thor-Forever-v0.1.0-alpha.1.zip** from the
+[release page](https://github.com/AeroNico/thor-forever/releases/tag/v0.1.0-alpha.1),
+then follow [START-HERE.md](START-HERE.md). Do not use **Code > Download ZIP**:
+that contains source code, not the installer payload.
+
+Installation into a separate environment, gameplay, saved gamepad settings,
+direct GameHub launch and restart passed manual testing on the owner's device.
+This is an early community preview, not a compatibility guarantee.
+See [validation results and known limits](docs/VALIDATION.md).
 
 This project documents a working World of Warcraft: Forever Beta ARM64 setup on one AYN Thor, using GameHub Lite Ludashi, a separate patched Wine runtime, ARM64 DXVK and a locally patched Mesa Turnip driver. It is not affiliated with Blizzard, AYN, GameHub, Wine or Mesa.
 
@@ -39,22 +43,23 @@ Versions describe the successful test, not current release recommendations. Late
 
 ## Read before installing anything
 
-Do not copy the historical troubleshooting scripts to another device. The new
-installer discovers standard game locations and creates a fresh prefix, but
-the final public launcher, third-party source/license package and complete
-release workflow still need preparation. The private test folder is not a
-public download and must not be uploaded as-is.
+Do not copy historical troubleshooting scripts to another device. The release
+installer discovers a single standard game location and creates a fresh prefix.
+Keep the existing installation and record its startup path before switching.
+No automatic uninstall or game-update migration is provided in this preview.
 
 See [the setup and validation plan](docs/SETUP.md), [technical findings](docs/TECHNICAL-NOTES.md), [troubleshooting](docs/TROUBLESHOOTING.md), and [release checklist](docs/RELEASE-CHECKLIST.md).
 
-The final-folder walkthrough is [START-HERE.md](START-HERE.md). It requires a
-complete release candidate, not GitHub's **Code > Download ZIP** source archive.
-There is currently **no public binary release**. Do not run the source-only
-installer expecting it to download missing components automatically.
+The [release](https://github.com/AeroNico/thor-forever/releases/tag/v0.1.0-alpha.1)
+also provides a source companion and SHA-256 checksums. Players need only the
+installer ZIP. The installer does not download missing payloads automatically.
+Developers: see [source distribution](docs/SOURCE-DISTRIBUTION.md).
 
 For safe switching back to the original entry, see [recovery guidance](docs/RECOVERY.md).
 
-This repository must not contain game files, account directories, an exported personal prefix, captured game shaders, raw logs, credentials, or third-party binaries without their source/license requirements addressed. Initial contents are documentation and selected source only.
+The Git repository contains source, documentation and notices. Release assets
+contain the separately packaged runtime and source companion. Neither includes
+game files, accounts, a personal prefix, captured game shaders or private logs.
 
 ## Credits and provenance
 

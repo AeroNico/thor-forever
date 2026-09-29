@@ -1,4 +1,4 @@
-# Draft — do not post until the installation kit is validated
+# Reddit draft — review before posting
 
 Title: WoW Forever Beta on AYN Thor: working gameplay, direct GameHub launch, and saved settings
 
@@ -15,7 +15,11 @@ I worked through the debugging with ChatGPT/Codex and tested the changes on the 
 
 Guide, source, limitations and rollback: https://github.com/AeroNico/thor-forever
 
-Publication check: the URL above is the approved target. Verify that the
-repository and a usable release exist before posting this draft.
+Experimental installer and matching sources:
+https://github.com/AeroNico/thor-forever/releases/tag/v0.1.0-alpha.1
+
+The new isolated package passed gameplay, direct entry, restart and gamepad
+persistence tests. Other devices and future game updates are unverified, and
+there is no automatic update migration or uninstaller yet.
 
 You need your own authorized game installation and eligible account. No game files, accounts or personal prefixes are included. Please read the tested-version list before trying it; this is experimental and game updates may break compatibility.

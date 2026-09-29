@@ -1,8 +1,9 @@
-# Dependency inventory (not a binary release)
+# Dependency inventory
 
-These are hashes of the actual locally tested artifacts. No binary is included
-in the source/documentation draft. Corresponding source, licenses and reproducible
-build instructions still need a complete review before binaries are published.
+These are the experimental release payload hashes. Wine is repackaged without
+two unused prefix-import files; its retained members are identical to the tested
+runtime. See BUNDLED-RUNTIME.md and SOURCE-DISTRIBUTION.md. Binaries are release
+assets, not files in this Git tree.
 
 | Artifact | SHA-256 |
 | --- | --- |
@@ -22,7 +23,8 @@ Target: Windows ARM64 (not x64), llvm-mingw 20260922 UCRT, glslang 16.6.0.
 
 Turnip source revision and the scheduler patch are described in TECHNICAL-NOTES.
 Build: NDK r27d, Android API 28, KGSL, no OpenGL, static C++ runtime, shader cache
-disabled. Windows-host generator/lexer adaptations need to be packaged too.
+disabled. Windows-host generator/lexer adaptations are included in
+`patches/mesa-windows-host.patch`.
 
 Shared-memory source was taken unmodified from the Wine Android fork's
 `android/android_sysvshm`. The exact C source hash is
@@ -31,10 +33,10 @@ header hash is `a87ea260794e6fae3820d7004916fce27e0d396ae266a3bb8b9e55bf08767609
 
 Wine's source revision is now confirmed as
 `52796bf615c265c23b22ae9dacc3da9e38c8487f`, whose parent matches the local
-checkout `dbae574ca0c0d3136ad644e6b9dd108bc9dce193`. A full runtime dependency
-and corresponding-source package is still pending. See SOURCE-PROVENANCE.md.
+checkout `dbae574ca0c0d3136ad644e6b9dd108bc9dce193`. See SOURCE-PROVENANCE.md
+and SOURCE-DISTRIBUTION.md for the companion archives and reconstruction notes.
 
 The tested launch also uses a scoped OpenGL-unavailable shim and native assertion
-tracer. Both original helper sources are included. Reproducible build recipes
-and resulting binary verification remain required; do not silently omit the
-tracer from the tested launch environment.
+tracer. Both original helper sources are included. Do not silently omit the
+tracer from the tested launch environment. Independent bit-for-bit rebuild
+verification remains outside this preview's validation claims.

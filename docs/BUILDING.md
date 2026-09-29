@@ -90,6 +90,20 @@ Use tool paths supplied by the developer, never a copied personal absolute path.
 This is the separately patched game driver, not the additional Wayland variants
 bundled in the Wine tar. Their build recipes and source revisions are different.
 
+## Scoped diagnostic helpers
+
+Both helper sources compile with NDK r27d's clang targeting Android ARM64/API 28:
+
+```text
+clang --target=aarch64-linux-android28 -shared -fPIC -O2 -Wl,-z,max-page-size=16384 -Wl,-soname,libGL.so.1 src/no-opengl-shim.c -o libGL.so.1
+clang --target=aarch64-linux-android28 -shared -fPIC -O2 -Wl,-z,max-page-size=16384 src/graphics-assert-trace.c -ldl -o trace.so
+```
+
+On PowerShell, quote each comma-containing `-Wl,...` argument. These commands
+were compile-checked on the packaging host. They do not reproduce the historical
+payload hashes; the release retains the original device-tested helpers. Any new
+helper build needs its own validation. Do not substitute it silently.
+
 ## Packaging
 
 First run `python -B tools/prepare-runtime.py ORIGINAL.tar NEW-OUTPUT.tar`.
@@ -106,3 +120,9 @@ and normalizes shell/CMD line endings. Its output is explicitly a **private
 candidate**, not permission to publish binary dependencies with incomplete
 notices/source materials. It never reads the handheld's game, prefix or account
 directories and does not upload anything.
+
+After source/notice review, `python -B tools/finalize-kit.py STAGED-KIT NEW.zip`
+checks every candidate file, all seven payloads and the exact tested launcher.
+It creates a ZIP with per-file checksums and verifies ZIP integrity. Source
+companion packaging is described in SOURCE-DISTRIBUTION.md. These tools never
+publish a release automatically.

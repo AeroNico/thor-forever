@@ -54,7 +54,9 @@ reverted to the previously recorded path without deleting either installation.
 - Remembered account name in the newly installed test environment. This worked
   in the older installation but was not separately reconfirmed in this test.
 - A cleanup/uninstall procedure that preserves user-created settings and Data.
-- Publication-ready source, license and build provenance for every binary.
+- Independent reproduction of all binaries from the supplied sources/build
+  recipes. The release includes a source companion and notices; it does not
+  claim a bit-for-bit reproducible build.
 
 Do not report a component-install exit code as proof of gameplay. Both the
 installer output and the owner's subsequent acceptance observations are needed.

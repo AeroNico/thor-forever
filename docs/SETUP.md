@@ -1,6 +1,8 @@
-# Setup plan and acceptance tests
+# Setup design and acceptance tests
 
-This is the required order for a future clean installation, not a copy-and-paste installer. Steps marked **release blocker** have not been validated from scratch on a second/fresh container.
+Developer background for the experimental installer. Players should follow
+START-HERE.md. The generalized procedure passed in an isolated environment on
+the owner's device; independent-device validation is still outstanding.
 
 ## 1. Preserve the existing setup
 
@@ -23,8 +25,8 @@ The extracted implementation is `installer/create-prefix.sh`.
 
 The generalized installer completed in a separate environment on the owner's
 device, and gameplay and gamepad-settings persistence passed manual testing.
-**Release blocker:** repeat the final packaged user flow, including direct entry
-and cold restart. Do not publish the owner's prefix archive.
+The final-folder flow, direct entry and restart also passed. Do not publish the
+owner's prefix archive. See VALIDATION.md for the packaging-only tar change.
 
 Record the exact Wine source revision, full patch set and build inputs. The tested runtime includes the ARM64 syscall/TEB work, the NLS allocation fix, Android SysV shared-memory support, matching `cryptbase`, and matching Windows-visible `ntdll.dll`. Establish which changes belong to the upstream fork and which are local; a short commit ID is not a complete source manifest.
 
@@ -38,7 +40,10 @@ The no-OpenGL shim must be visible only to the dedicated game process through it
 
 ## 5. Parameterize paths
 
-**Release blocker:** discover or ask for the actual game/container path. Never ship the owner's container UUID or removable-storage identifier. Configuration must validate paths and fail before making changes if the expected files are missing. Preserve inherited GameHub sandbox-related environment variables.
+The installer discovers a single standard game/container path and refuses
+missing or ambiguous matches. Custom-folder selection is not implemented.
+Never ship a personal container UUID or removable-storage identifier. Preserve
+inherited GameHub sandbox-related environment variables.
 
 ## 6. Launch profile
 

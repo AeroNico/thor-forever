@@ -10,17 +10,17 @@
 - [x] Create and test a fresh-prefix procedure without personal archives.
 - [x] Validate that procedure through the generalized installer on the owner's device.
 - [x] Pin full Wine/DXVK/shared-memory source revisions and local game-runtime patches.
-- [ ] Package build scripts without host-specific paths; validate the resulting artifacts.
-- [ ] Include required third-party license notices and corresponding source materials before distributing binaries.
+- [x] Package upstream build recipes, local patches and path-independent packaging tools; compile-check the original helper sources. Independent full/bit-identical rebuild remains unverified.
+- [x] Include third-party notices and the pinned source companion described in SOURCE-DISTRIBUTION.md.
 - [x] Include pinned component checksums, dependency inventory and non-destructive switch-back instructions.
-- [ ] Add bounded/error-reporting lifecycle handling to the generalized launcher.
+- [x] Add a 60-second startup-handshake timeout and completion error reporting. Interrupted-bridge recovery remains a disclosed limitation, not a guaranteed recovery path.
 - [x] Test installation, gameplay and gamepad-setting persistence in a fresh isolated environment.
 - [x] Test the new Windows wrapper and direct GameHub entry on the owner's device.
 - [x] Test the private installation's direct entry after a full device reboot.
 - [ ] Test the final public package on another device.
 - [ ] Reconfirm remembered account-name behavior in the new installation.
 - [x] Owner confirmed original guide/comment attribution: u/BryTheGuy06.
-- [ ] Inspect every staged file for credentials, emails, user/container/device identifiers, personal prefixes and proprietary assets.
+- [x] Review the staged file inventory and provenance; scan known private identifiers; exclude personal prefixes, raw logs and game assets. Upstream copyright/author credits are intentionally retained.
 - [x] Owner authorized public repository; reviewed source-only contents pushed without private data or binaries.
 - [x] Replace the Reddit draft placeholder with the actual repository URL (do not post until a usable release exists).
 - [x] Validate final public-folder candidate: installation, gameplay, direct entry, restart and gamepad persistence confirmed on the owner's device.
@@ -29,4 +29,6 @@
 
 Do not distribute: Blizzard executables/data, game-derived shader captures, the owner's Wine prefix, account/character configuration, registry exports, raw diagnostic logs, or development-tool bundles.
 
-This checklist records packaging work still needed; the current folder is not a completed end-user installation kit.
+The independent-device, account-name reconfirmation and full rebuild items are
+not claimed by this experimental preview. They remain follow-up validation,
+not reasons to describe an untested result as successful.

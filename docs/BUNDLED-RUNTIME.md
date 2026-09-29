@@ -74,11 +74,10 @@ except white, which uses `whitebelyash/mesa-unified`. The former is a mirror of
 the upstream Mesa repository. Preserve the full upstream source notices in the
 source distribution rather than labeling all variants as MIT-only.
 
-## Remaining publication work
+## Source packaging
 
-Assemble and inspect the downloadable source companion and binary kit together.
-The Wine source snapshot itself vendors prebuilt libraries, so it must not be
-advertised as a binary-free source archive without filtering those entries.
-Retain build recipes, patches and per-source notices. The successful private
-candidate and the files above do not, by themselves, constitute a published
-downloadable release.
+The source companion is assembled separately from the binary kit. The Wine
+source snapshot vendors 16 prebuilt ELF libraries; `tools/package-sources.py`
+omits exactly those entries and records their hashes. It retains source code,
+data, build recipes and patches. The other pinned archives retain their upstream
+notices. See SOURCE-DISTRIBUTION.md for extraction and reconstruction guidance.

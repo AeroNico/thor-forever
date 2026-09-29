@@ -68,8 +68,9 @@ Neither helper justifies distributing game assets or captured shader files.
 The source snapshot intentionally excludes the private test package, all game
 files, personal prefixes, logs, account settings, compiler bundles and binaries.
 The final-folder launcher, installation, gameplay and gamepad persistence have
-passed on the owner's device. Public binary publication still requires finishing
-the dependency/source package; the launcher is no longer an outstanding blocker.
+passed on the owner's device. The experimental release supplies a separate
+source companion; see SOURCE-DISTRIBUTION.md. Independent-device validation
+and independent rebuilds are not claimed.
 
 ### Additional libraries found inside the Wine runtime
 
@@ -99,5 +100,5 @@ Wine's directaudio submodule is pinned to
 https://github.com/The412Banner/directaudio. A GitHub source tar does not itself
 populate that submodule. Preserving the parent tar is therefore not sufficient
 to claim a complete recursive source bundle. Both parent and submodule archives
-have now been downloaded separately; downstream bundled dependencies still
-need their own matching source/notice inventory before binary publication.
+are included separately. Downstream bundled dependencies and notices are
+inventoried in BUNDLED-RUNTIME.md and SOURCE-DISTRIBUTION.md.

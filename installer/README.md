@@ -1,34 +1,29 @@
-# Setup assistant prototype
+# Installer internals
 
-`Check-Setup.cmd` is a read-only preflight. The final package's
-`Install-Thor-Forever.cmd` calls a separate installer; source-only downloads do
-not contain its binary dependencies. See `START-HERE.md` before any test.
+Players should open the root `Install-Thor-Forever.cmd` and follow START-HERE.md.
+Do not launch individual shell scripts manually. GitHub source-only downloads
+do not contain the seven required binary payloads.
 
-A separate developer-only `install-components.sh` is now present. It is not
-invoked by Check-Setup.cmd and requires a vetted `payload/` which is deliberately
-absent from this source draft. The second private Android attempt completed,
-and subsequent gameplay, settings persistence and direct-entry tests passed.
-Do not run it as a finished public installer.
+`Check-Setup.cmd` is an optional read-only preflight. It discovers a single
+standard Forever Beta ARM64 installation in GameHub Lite Ludashi. Missing or
+ambiguous game paths stop the process. Custom-folder selection is not provided.
 
-For a future device test, extract the complete package as `Download/Thor-Forever`, open the GameHub container desktop and run `installer/Check-Setup.cmd`. Read `installer/setup-check.txt`. No terminal commands or path editing should be needed for a standard supported installation.
+The root installer calls `setup.sh`, then `install-components.sh`, which checks
+pinned hashes, free space, destination safety and component copies. It creates
+a new prefix and stages executable-side game files and fresh settings. It never
+imports a personal prefix or account configuration. Existing destinations are
+refused, including unfinished attempts. This is not an upgrade/repair command.
 
-Supported discovery: GameHub Lite Ludashi, Forever Beta's `WowB-ARM64.exe`, under either standard Program Files directory in a virtual container. The assistant rejects an ambiguous match instead of guessing. Custom-folder selection and a graphical results screen remain unimplemented. The private integrated installer passed on Android. The final package uses `release-v1` under the dedicated Thor Forever root; private attempts are not overwritten. Switching back to the old startup entry is documented, but automatic cleanup is not implemented.
+Large CASC Data is shared through a link, **not a read-only mount**. Never point
+Battle.net or an updater at the separate game layout. GameHub's original runtime
+and game installation are not replaced. Direct entry is selected manually.
 
-`stage-game.sh` is an internal library called by the developer-only component installer. It
-prepares separate executable files and settings under a new `game/` directory,
-verifies copies and refuses an existing destination. It does not copy account
-settings, caches or logs. Large CASC Data remains shared through a link, **not a
-read-only mount**; never run Battle.net or an updater against the staged layout.
-This library ran successfully as part of the second private Android attempt.
+The installation report uses `PREPARED_NOT_VALIDATED` after successful setup:
+preparation is not proof that a game session works on a new device. Confirm
+gameplay and settings persistence separately. The final-folder procedure passed
+on the owner's Thor; see docs/VALIDATION.md for evidence and limits.
 
-The developer installer now stops after preparing components and the separate
-game layout. It does not launch WoW, change GameHub's startup entry or declare
-the installation playable. Once the dedicated attempt directory exists,
-`result.txt` records the last phase and exit code in English. A zero exit is
-reported as `PREPARED_NOT_VALIDATED`, never as a completed acceptance test.
-Detailed `install.log` output is private and may contain local paths. Early
-preflight failures occur before that report directory exists.
-
-The checker does not inspect executable contents, so a match is not proof of the correct client version or architecture. File presence is only the first preflight stage.
-
-Private reports must not be uploaded automatically. There is no telemetry or network request in this checker.
+Reports and launch logs stay local and may contain paths or account-related
+diagnostics. Review/redact them before sharing. There is no telemetry or
+automatic upload. The `--test-attempt-02` option in the internal component
+installer is historical developer support, not a user installation instruction.

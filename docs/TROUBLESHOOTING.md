@@ -1,0 +1,16 @@
+# Troubleshooting
+
+| Symptom | First check |
+| --- | --- |
+| Settings/account name forgotten | Use the bare custom configuration filename after `-config`; exit through the game menu. Never reset that file on each launch. |
+| Battle.net opens instead of the dedicated launcher | Verify Startup File Path and close the previous container session before testing. |
+| Immediately returns to GameHub | Inspect the bridge completion code and latest launch log. Check that the Windows wrapper remains alive and native child streams are redirected. |
+| Bridge returns 141 | The observed setup needed stdout/stderr redirected to a file and stdin to `/dev/null` before launching children. |
+| Photosensitivity-stage crash | Verify the exact runtime/driver/shim combination. That visual symptom alone does not prove a shader scheduler fault. |
+| No realms | Verify credentials, region/eligibility and client build against the working PC installation; do not assume a Vulkan fault. |
+| In-game options cause instability | Return to the tested low-load profile. Preserve the failing log privately before experimenting. |
+| Launcher reports another session | Do not start concurrent clients. Use the launcher's owner-checked lock recovery; never kill all Wine processes globally. |
+
+Do not post raw logs, registry exports or WTF/Account files. They may expose account names, character names, tokens, paths and device identifiers. Share only a reviewed, redacted excerpt relevant to the failure.
+
+Rollback should restore the recorded Startup File Path and leave the original GameHub/Battle.net components untouched. Retain private backups locally; removing the custom launcher is not a reason to delete the game or its settings.

@@ -1,0 +1,16 @@
+# Source/documentation staging only. Release binaries require explicit review.
+*.exe
+*.dll
+*.so
+*.zip
+*.tar
+*.zst
+*.log
+*.reg
+*.spv
+*.dxbc
+.env*
+backups/
+diagnostics/
+WTF/
+Account/

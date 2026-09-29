@@ -1,0 +1,29 @@
+--- a/meson.build
++++ b/meson.build
+@@ -2096,7 +2096,12 @@
+   if prog_flex.found()
+     # windows compatibility (uses <io.h> instead of <unistd.h> and _isatty,
+     # _fileno functions)
+-    prog_flex = [prog_flex, '--wincompat']
++    if host_machine.system() == 'windows'
++      prog_flex = [prog_flex, '--wincompat']
++    else
++      # Windows-host generator, but the generated scanner targets Android.
++      prog_flex = [prog_flex]
++    endif
+   else
+     prog_flex = [find_program('flex', 'lex', required : needs_flex_bison, disabler : true)]
+   endif
+--- a/src/compiler/isaspec/meson.build
++++ b/src/compiler/isaspec/meson.build
+@@ -3,8 +3,8 @@
+ 
+-prog_isaspec_decode = find_program('decode.py')
++prog_isaspec_decode = [prog_python, files('decode.py')]
+ idep_isaspec_decode = declare_dependency(include_directories : include_directories('.'))
+ 
+-prog_isaspec_encode = find_program('encode.py')
++prog_isaspec_encode = [prog_python, files('encode.py')]
+ 
+ isaspec_py_deps = files('isa.py')
+ 

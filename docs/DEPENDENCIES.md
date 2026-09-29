@@ -1,0 +1,40 @@
+# Dependency inventory (not a binary release)
+
+These are hashes of the actual locally tested artifacts. No binary is included
+in the source/documentation draft. Corresponding source, licenses and reproducible
+build instructions still need a complete review before binaries are published.
+
+| Artifact | SHA-256 |
+| --- | --- |
+| Wine runtime tar | `41d22dca5c6ede633e59971f16bf180e449583648b4c804027e23353cce1a453` |
+| ARM64 DXVK d3d11.dll | `7da6a1fc8d741abd5b0404eca7a99fdf490c832626a290fb31689c38f5a3bcae` |
+| ARM64 DXVK dxgi.dll | `35af848fd7e316113c54a13af2fe7e14760383d236fe29a6b8cd18f09e9c1f4e` |
+| Android libandroid-sysvshm.so | `8aba6a640a60783e8c882066d3cd49e5155b07fc7e1a5dd0aa7009cef369465a` |
+| Patched libvulkan_freedreno.so | `51c1b2c9d4c124923bbdc6fcf182629ca447dd20110bca0f1bae4aac12481401` |
+| Scoped libGL.so.1 | `df76b24dd14b77e56727864702c4a589ebedb609bdf3bfdaefa30863101a9e8f` |
+| Assertion tracer trace.so | `82fc90739eadfbbe053d51ce18e3d1bdde4bcda5f204dfbfe3c6b5658027e319` |
+
+DXVK source: version 2.4.1, revision
+`0cf05780abd7250c2cd713b7749cf32180157cf5`. Local compiler compatibility
+adjustments explicitly include `<algorithm>` and construct the default pipeline
+key for a tuple; these must be supplied with reproducible build instructions.
+Target: Windows ARM64 (not x64), llvm-mingw 20260922 UCRT, glslang 16.6.0.
+
+Turnip source revision and the scheduler patch are described in TECHNICAL-NOTES.
+Build: NDK r27d, Android API 28, KGSL, no OpenGL, static C++ runtime, shader cache
+disabled. Windows-host generator/lexer adaptations need to be packaged too.
+
+Shared-memory source was taken unmodified from the Wine Android fork's
+`android/android_sysvshm`. The exact C source hash is
+`cc58b9a7e7ccec14fa1193418b4760c3aa871ae1fbbc55eef25f30b7f7ee6b86`;
+header hash is `a87ea260794e6fae3820d7004916fce27e0d396ae266a3bb8b9e55bf08767609`.
+
+Wine's source revision is now confirmed as
+`52796bf615c265c23b22ae9dacc3da9e38c8487f`, whose parent matches the local
+checkout `dbae574ca0c0d3136ad644e6b9dd108bc9dce193`. A full runtime dependency
+and corresponding-source package is still pending. See SOURCE-PROVENANCE.md.
+
+The tested launch also uses a scoped OpenGL-unavailable shim and native assertion
+tracer. Both original helper sources are included. Reproducible build recipes
+and resulting binary verification remain required; do not silently omit the
+tracer from the tested launch environment.

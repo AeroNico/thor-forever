@@ -33,7 +33,8 @@ The local altered source is marked by `patches/dxvk-arm64-toolchain.patch`.
 The tested build also force-includes `<algorithm>` using the compiler options
 `-include algorithm`. This compiler option must be preserved when reproducing
 the historical build. The copied upstream license is in `notices/DXVK-LICENSE.txt`.
-Submodules and third-party header notices still require a release inventory.
+Submodule pins and third-party header notices are recorded in BUILDING.md and
+the DirectX, SPIR-V and Vulkan notice files.
 
 ## Mesa / Turnip
 
@@ -66,8 +67,9 @@ Neither helper justifies distributing game assets or captured shader files.
 
 The source snapshot intentionally excludes the private test package, all game
 files, personal prefixes, logs, account settings, compiler bundles and binaries.
-A beginner-ready installer remains blocked on the dependency package and final
-portable launcher, even though private installation and gameplay have passed.
+The final-folder launcher, installation, gameplay and gamepad persistence have
+passed on the owner's device. Public binary publication still requires finishing
+the dependency/source package; the launcher is no longer an outstanding blocker.
 
 ### Additional libraries found inside the Wine runtime
 
@@ -75,9 +77,9 @@ Archive inspection found eight Wayland Turnip variants, libgallium, EGL/GLES,
 Wayland, xkbcommon/xkbregistry and libdrm in `lib/`. They are additional upstream
 components, not covered simply by naming Wine's LGPL license. The fork records
 their build lineage in `android/wayland-deps/TURNIP.md`, including Banners-Turnip
-Wayland build `0121416` and per-driver Mesa pins. Matching source archives,
-dependency notices and the full corresponding-source bundle must accompany a
-binary release. Do not confuse our separately patched driver with these bundled
+Wayland build `0121416` and per-driver Mesa pins. Component-specific notices and
+source distribution materials are tracked in BUNDLED-RUNTIME.md.
+Do not confuse our separately patched driver with these bundled
 variants. They have not been removed from the tested runtime.
 
 Preserved source archives now downloaded and hashed locally:

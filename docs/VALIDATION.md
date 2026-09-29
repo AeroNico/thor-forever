@@ -42,6 +42,10 @@ reverted to the previously recorded path without deleting either installation.
 
 ## Still unverified
 
+- The repackaged Wine tar omits only the unused upstream `prefixPack.txz` and
+  `profile.json`; all 2,589 retained members passed host-side content/metadata
+  comparison. It has not been separately installed on-device. See
+  BUNDLED-RUNTIME.md for the original and repackaged hashes.
 - The final downloadable package and beginner instructions on another device.
 - Repeated-launch rejection and interrupted-launch recovery in the new entry.
 - Game updates: copied executable-side files may become stale relative to the

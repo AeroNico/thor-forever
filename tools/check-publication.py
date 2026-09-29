@@ -14,6 +14,10 @@ allowed = {
     'docs/VALIDATION.md', 'docs/RECOVERY.md',
     'docs/SOURCE-PROVENANCE.md',
     'docs/BUILDING.md',
+    'docs/BUNDLED-RUNTIME.md', 'tools/prepare-runtime.py',
+    'notices/LIBDRM.txt', 'notices/WAYLAND.txt',
+    'notices/XKEYBOARD-CONFIG.txt', 'notices/XKBCOMMON.txt',
+    'notices/BANNERS-TURNIP-GPL-3.0.txt',
     'notices/DXVK-LICENSE.txt', 'notices/WINE-LICENSE.txt', 'notices/WINE-COPYING.LIB.txt',
     'src/graphics-assert-trace.c', 'patches/dxvk-arm64-toolchain.patch',
     'src/launcher.c', 'installer/launch-game.sh', 'installer/entry.sh',
@@ -65,4 +69,4 @@ if problems:
     print('\n'.join(problems))
     sys.exit(1)
 print('PASS: allowlisted source/documentation only; no checked personal path patterns.')
-print('NOT release approval: clean installation, manual privacy and licensing checks remain pending.')
+print('NOT release approval: dependency packaging and manual privacy/license review are separate checks.')

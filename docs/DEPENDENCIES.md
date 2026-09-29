@@ -6,7 +6,7 @@ build instructions still need a complete review before binaries are published.
 
 | Artifact | SHA-256 |
 | --- | --- |
-| Wine runtime tar | `41d22dca5c6ede633e59971f16bf180e449583648b4c804027e23353cce1a453` |
+| Wine runtime tar (public packaging, unused prefix-import files omitted) | `23c36158198eeb4d7037f6ef060b5ffabc692013822857fb9ae27b3a301891ca` |
 | ARM64 DXVK d3d11.dll | `7da6a1fc8d741abd5b0404eca7a99fdf490c832626a290fb31689c38f5a3bcae` |
 | ARM64 DXVK dxgi.dll | `35af848fd7e316113c54a13af2fe7e14760383d236fe29a6b8cd18f09e9c1f4e` |
 | Android libandroid-sysvshm.so | `8aba6a640a60783e8c882066d3cd49e5155b07fc7e1a5dd0aa7009cef369465a` |

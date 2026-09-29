@@ -6,7 +6,7 @@ import unittest
 
 SHELL = str(Path(sys.argv.pop(1)).resolve())
 SOURCE = (Path(__file__).parents[1] / 'installer/verify-payload.sh').read_text()
-DIGEST = '41d22dca5c6ede633e59971f16bf180e449583648b4c804027e23353cce1a453'
+DIGEST = '23c36158198eeb4d7037f6ef060b5ffabc692013822857fb9ae27b3a301891ca'
 EXPECTED = DIGEST + '  /fixture path/wine-runtime.tar'
 NOISE = ('Could not find memory region containing address /wine'
          'Could not find memory region containing address /box64')

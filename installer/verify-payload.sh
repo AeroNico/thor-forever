@@ -40,7 +40,7 @@ tf_verify_payload()
         done <"$tf_report"
         [ "$tf_match" = 1 ] || { print -r -- "Checksum mismatch: $tf_name"; return 42; }
     done <<'THOR_HASHES'
-41d22dca5c6ede633e59971f16bf180e449583648b4c804027e23353cce1a453 wine-runtime.tar
+23c36158198eeb4d7037f6ef060b5ffabc692013822857fb9ae27b3a301891ca wine-runtime.tar
 7da6a1fc8d741abd5b0404eca7a99fdf490c832626a290fb31689c38f5a3bcae d3d11.dll
 35af848fd7e316113c54a13af2fe7e14760383d236fe29a6b8cd18f09e9c1f4e dxgi.dll
 8aba6a640a60783e8c882066d3cd49e5155b07fc7e1a5dd0aa7009cef369465a libandroid-sysvshm.so

@@ -92,6 +92,14 @@ bundled in the Wine tar. Their build recipes and source revisions are different.
 
 ## Packaging
 
+First run `python -B tools/prepare-runtime.py ORIGINAL.tar NEW-OUTPUT.tar`.
+It accepts only the tested original runtime hash and excludes exactly
+`prefixPack.txz` and `profile.json`. Thor Forever never imports that upstream
+prefix; it creates a fresh one with `create-prefix.sh`. All 2,589 retained
+members are compared against the original for content and metadata equality.
+Use the resulting archive as `payload/wine-runtime.tar`. This is a packaging
+change, not a rebuild or replacement of Wine libraries. See BUNDLED-RUNTIME.md.
+
 `tools/package-candidate.ps1` verifies the seven input hashes and copies only
 the selected installation material into a new directory. It refuses overwrites
 and normalizes shell/CMD line endings. Its output is explicitly a **private

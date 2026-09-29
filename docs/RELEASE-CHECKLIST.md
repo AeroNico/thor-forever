@@ -9,7 +9,7 @@
 - [x] Replace personal container identifiers with standard-layout discovery and fixed public package paths.
 - [x] Create and test a fresh-prefix procedure without personal archives.
 - [x] Validate that procedure through the generalized installer on the owner's device.
-- [ ] Pin full Wine/DXVK/shared-memory source revisions and all local patches.
+- [x] Pin full Wine/DXVK/shared-memory source revisions and local game-runtime patches.
 - [ ] Package build scripts without host-specific paths; validate the resulting artifacts.
 - [ ] Include required third-party license notices and corresponding source materials before distributing binaries.
 - [x] Include pinned component checksums, dependency inventory and non-destructive switch-back instructions.
@@ -24,6 +24,8 @@
 - [x] Owner authorized public repository; reviewed source-only contents pushed without private data or binaries.
 - [x] Replace the Reddit draft placeholder with the actual repository URL (do not post until a usable release exists).
 - [x] Validate final public-folder candidate: installation, gameplay, direct entry, restart and gamepad persistence confirmed on the owner's device.
+- [x] Preserve the six additional Mesa source revisions and supporting-library notices (see BUNDLED-RUNTIME.md).
+- [x] Exclude unused upstream prefix-import files and verify every retained runtime member is unchanged.
 
 Do not distribute: Blizzard executables/data, game-derived shader captures, the owner's Wine prefix, account/character configuration, registry exports, raw diagnostic logs, or development-tool bundles.
 

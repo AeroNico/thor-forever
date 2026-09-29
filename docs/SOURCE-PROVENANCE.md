@@ -79,3 +79,19 @@ Wayland build `0121416` and per-driver Mesa pins. Matching source archives,
 dependency notices and the full corresponding-source bundle must accompany a
 binary release. Do not confuse our separately patched driver with these bundled
 variants. They have not been removed from the tested runtime.
+
+Preserved source archives now downloaded and hashed locally:
+
+| Source | Revision | Archive SHA-256 |
+| --- | --- | --- |
+| Wine fork | `52796bf615c265c23b22ae9dacc3da9e38c8487f` | `1e4af10a578c8a7d1075f9cdbf68d02adc5302fd956b42e452d6eb44503f0531` |
+| Banners-Turnip build recipes | `0121416358dce37615bb3ff97e67980ce7baf353` | `6fa5d717bd93423867b696cff3ceb78ac1c9521c5b03daa092a1772c43700196` |
+| Wine directaudio submodule | `2101085596ffe4911f7686012a97585eacbde9d0` | `f16bee1ba4864cad3ebcc704d02b31cefeecbd21fbd7e713bb3fa08f354c3408` |
+
+Wine's directaudio submodule is pinned to
+`2101085596ffe4911f7686012a97585eacbde9d0` in
+https://github.com/The412Banner/directaudio. A GitHub source tar does not itself
+populate that submodule. Preserving the parent tar is therefore not sufficient
+to claim a complete recursive source bundle. Both parent and submodule archives
+have now been downloaded separately; downstream bundled dependencies still
+need their own matching source/notice inventory before binary publication.

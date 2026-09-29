@@ -47,6 +47,11 @@ public download and must not be uploaded as-is.
 
 See [the setup and validation plan](docs/SETUP.md), [technical findings](docs/TECHNICAL-NOTES.md), [troubleshooting](docs/TROUBLESHOOTING.md), and [release checklist](docs/RELEASE-CHECKLIST.md).
 
+The final-folder walkthrough is [START-HERE.md](START-HERE.md). It requires a
+complete release candidate, not GitHub's **Code > Download ZIP** source archive.
+There is currently **no public binary release**. Do not run the source-only
+installer expecting it to download missing components automatically.
+
 For safe switching back to the original entry, see [recovery guidance](docs/RECOVERY.md).
 
 This repository must not contain game files, account directories, an exported personal prefix, captured game shaders, raw logs, credentials, or third-party binaries without their source/license requirements addressed. Initial contents are documentation and selected source only.

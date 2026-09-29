@@ -20,6 +20,8 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE previous, PWSTR args, int show
     ULONGLONG deadline;
     HANDLE result;
     char buffer[32] = {0};
+    char *end;
+    unsigned long parsed;
     (void)instance; (void)previous; (void)args; (void)show;
     si.cb = sizeof(si);
     swprintf(bridge, 512, L"%ls\\installer\\entry.sh", kit);
@@ -55,8 +57,11 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE previous, PWSTR args, int show
     if (result == INVALID_HANDLE_VALUE) return 7;
     if (!ReadFile(result, buffer, sizeof(buffer)-1, &count, NULL)) { CloseHandle(result); return 7; }
     CloseHandle(result);
-    if (!count || buffer[0] < '0' || buffer[0] > '9') return 7;
-    int code = atoi(buffer);
+    if (!count || count >= sizeof(buffer)-1 || buffer[0] < '0' || buffer[0] > '9') return 7;
+    parsed = strtoul(buffer, &end, 10);
+    while (*end == '\r' || *end == '\n') ++end;
+    if (*end || parsed > 255) return 7;
+    int code = (int)parsed;
     if (code) MessageBoxW(NULL, L"The game stopped with an error. Keep the newest INSTALLED-WOW folder and ENTRY log for diagnosis.", L"Thor Forever", MB_OK | MB_ICONWARNING);
     return code;
 }

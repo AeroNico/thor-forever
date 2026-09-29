@@ -168,3 +168,15 @@ upstream Wine/DXVK notices and the DXVK compiler patch were collected, and the
 original assertion-tracer source was included. SOURCE-PROVENANCE.md records
 remaining binary-distribution and reproducible-build gaps. No repository has
 been created or pushed and no binary kit is approved for public distribution.
+
+Publication follow-up: the owner approved the public repository
+https://github.com/AeroNico/thor-forever and credited u/BryTheGuy06. Reviewed
+source and documentation are now pushed there; no binary release was uploaded.
+The final-name Windows ARM64 launcher compiled with warnings treated as errors,
+and private candidate packaging verified the seven component hashes. Static
+tests check final paths, bridge targets and settings names. The final candidate
+uses Download/Thor-Forever and a separate release-v1 destination; it does not
+overwrite private install-v1/install-v2 attempts. Its device acceptance remains
+pending because the AYN Thor is currently disconnected from ADB. Two host
+directory-symlink tests remain explicitly skipped on Windows, not counted as
+passed. The owner-confirmed earlier Android layout test remains recorded above.

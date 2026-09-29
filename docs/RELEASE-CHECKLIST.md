@@ -22,7 +22,6 @@
 - [x] Owner confirmed original guide/comment attribution: u/BryTheGuy06.
 - [x] Review the staged file inventory and provenance; scan known private identifiers; exclude personal prefixes, raw logs and game assets. Upstream copyright/author credits are intentionally retained.
 - [x] Owner authorized public repository; reviewed source-only contents pushed without private data or binaries.
-- [x] Replace the Reddit draft placeholder with the actual repository URL (do not post until a usable release exists).
 - [x] Validate final public-folder candidate: installation, gameplay, direct entry, restart and gamepad persistence confirmed on the owner's device.
 - [x] Preserve the six additional Mesa source revisions and supporting-library notices (see BUNDLED-RUNTIME.md).
 - [x] Exclude unused upstream prefix-import files and verify every retained runtime member is unchanged.

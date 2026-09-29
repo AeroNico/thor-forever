@@ -8,7 +8,7 @@ import sys
 
 root = Path(__file__).resolve().parents[1]
 allowed = {
-    '.gitignore', '.gitattributes', 'README.md', 'REDDIT-DRAFT.md', 'LICENSE', 'LICENSING.md',
+    '.gitignore', '.gitattributes', 'README.md', 'LICENSE', 'LICENSING.md',
     'docs/SETUP.md', 'docs/TECHNICAL-NOTES.md', 'docs/TROUBLESHOOTING.md',
     'docs/RELEASE-CHECKLIST.md', 'docs/IMPLEMENTATION-STATUS.md',
     'docs/VALIDATION.md', 'docs/RECOVERY.md',

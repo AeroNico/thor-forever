@@ -84,7 +84,11 @@ export WINEPREFIX="$PREFIX" WINEARCH=win64 WINEESYNC=0
 export WINELOADER="$RUNTIME/bin/wine" WINESERVER="$RUNTIME/bin/wineserver"
 export PATH="$RUNTIME/bin:$PATH"
 export LD_LIBRARY_PATH="$GL_DIR:$RUNTIME/lib:$RUNTIME/lib/wine/aarch64-unix${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
-export LD_PRELOAD="$GL_DIR/trace.so${LD_PRELOAD:+:$LD_PRELOAD}"
+# The assertion tracer is a driver-debugging aid, not needed for play.
+# Opt in by creating $KIT/enable-trace before launching.
+if [ -f "$KIT/enable-trace" ]; then
+    export LD_PRELOAD="$GL_DIR/trace.so${LD_PRELOAD:+:$LD_PRELOAD}"
+fi
 export WINEDATADIR="$RUNTIME/share/wine" XDG_DATA_DIRS="$RUNTIME/share" WINEDLLPATH="$RUNTIME/lib/wine"
 export WINEDLLOVERRIDES='dxgi,d3d11=n,b'
 export WINEDEBUG='-all,err+all' WINEMU_REPLACED_DRIVER="$DRIVER"
